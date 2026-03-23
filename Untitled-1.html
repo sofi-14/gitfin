@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Refugio "Huellitas"</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #73cde8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #8eecff;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .animals {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .animal {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        .animalitos img {
+            width: 10%;
+            border-radius: 1px;
+        }
+
+        .animal img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #9ac3fd;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff4c4c;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="animalitos">
+                <img src="c:\Users\980020887\Documents\SOFI\finnn\Imagenes\gatito perrito.png" alt="Perrito">
+            </div>
+    <h1>🐾 Refugio "Huellitas"</h1>
+    
+    <p>Encontrando hogares con demasiado amor</p>
+</header>
+
+<nav>
+    <a href="#nuestra historia">Nuestra historia</a>
+    <a href="#adopta">Adopta</a>
+    <a href="#rescate">Rescata</a>
+    <a href="#tips y cuidados">Tips y cuidados</a>
+    <a href="#apadrinar">Apadrinar</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+<div class="container">
+
+    <section id="nosotros" class="card">
+        <h2>Nosotros</h2>
+        <p>
+            Somos un refugio dedicado al rescate, cuidado y adopción de animales en situación de calle.
+            Nuestro objetivo es brindarles una segunda oportunidad donde tenga mucho amor.
+        </p>
+    </section>
+
+    <section id="adopta" class="card">
+        <h2>Animales en Adopción</h2>
+        <div class="animals">
+            
+            <div class="animal">
+                <img src="c:\Users\980020887\Documents\SOFI\finnn\Imagenes\perrito 1.jpg" alt="Perrito">
+                <h3>Pepito</h3>
+                <p>Edad: 2 años</p>
+                <p>Raza: </p>
+                <button>Adoptar</button>
+            </div>
+
+            <div class="animal">
+                <img src="c:\Users\980020887\Documents\SOFI\finnn\Imagenes\gatito 2.jpg" alt="Gatito">
+                <h3>Chanclita</h3>
+                <p>Edad: 1 año</p>
+                <p>Pelaje:</p>
+                <button>Adoptar</button>
+            </div>
+
+            <div class="animal">
+                <img src="c:\Users\980020887\Documents\SOFI\finnn\Imagenes\gatito 1.jpg" alt="Gatito">
+                <h3>Mili</h3>
+                <p>Edad: 3 años</p>
+                <p>Pelaje:</p>
+                <button>Adoptar</button>
+            </div>
+
+             <div class="animal">
+                <img src="c:\Users\980020887\Documents\SOFI\finnn\Imagenes\gatito 1.jpg" alt="Gatito">
+                <h3>Mili</h3>
+                <p>Edad: 3 años</p>
+                <p>Pelaje:</p>
+                <button>Adoptar</button>
+            </div>
+
+             <div class="animal">
+                <img src="c:\Users\980020887\Documents\SOFI\finnn\Imagenes\gatito 1.jpg" alt="Gatito">
+                <h3>Mili</h3>
+                <p>Edad: 3 años</p>
+                <p>Pelaje:</p>
+                <button>Adoptar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="card">
+        <h2>Contacto</h2>
+        <p>Email: contacto@gmail.com</p>
+        <p>Teléfono: -- --------</p>
+        <p>Dirección: -------</p>
+    </section>
+
+</div>
+
+<footer>
+    <p></p>
+</footer>
+
+</body>
+</html>
