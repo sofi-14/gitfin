@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellitas - Login Empleado</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: #f9f5f0;
+            color: #2e1f0e;
+        }
+
+        .center-wrap {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: #fff;
+            border: 2px solid #c9a97a;
+            padding: 40px 36px;
+            width: 400px;
+            max-width: 95vw;
+        }
+
+        h1 {
+            text-align: center;
+            color: #5c3317;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #8b6340;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        label {
+            display: block;
+            font-size: 0.82rem;
+            margin-bottom: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        input {
+            width: 100%;
+            padding: 9px;
+            border: 1px solid #c9a97a;
+            margin-bottom: 15px;
+        }
+
+        input:focus {
+            border-color: #5c3317;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: #5c3317;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #7a4620;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.8rem;
+        }
+
+        .link a {
+            color: #5c3317;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            text-align: center;
+            min-height: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="center-wrap">
+    <div class="card">
+
+        <h1>🐾 Huellitas</h1>
+        <p class="tagline">Acceso para empleados</p>
+
+        <div id="error-msg" class="error"></div>
+
+        <label>Usuario / Número de empleado</label>
+        <input type="text" id="user" placeholder="Ej. EMP-0042">
+
+        <label>Contraseña</label>
+        <input type="password" id="pass" placeholder="••••••••">
+
+        <button class="btn" onclick="login()">Iniciar Sesión</button>
+
+        <div class="link">
+            <a href="index.html">← Regresar al inicio</a>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+    const SUPABASE_URL = "https://zafkalfoutcxookmdfqk.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_C3cL7nw2s_c2SPGMbP8R4A_SuCTkwzI";
+
+    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    async function login() {
+        const user = document.getElementById("user").value.trim();
+        const pass = document.getElementById("pass").value.trim();
+        const error = document.getElementById("error-msg");
+
+        error.textContent = "";
+
+        if (!user || !pass) {
+            error.textContent = "Por favor llena todos los campos.";
+            return;
+        }
+
+        const { data, error: queryError } = await supabaseClient
+            .from("empleados")
+            .select("id_empleado, numero_empleado, nombre_completo, correo")
+            .eq("numero_empleado", user)
+            .eq("password", pass)
+            .maybeSingle();
+
+        if (queryError) {
+            console.error(queryError);
+            error.textContent = "Ocurrió un error al conectar con Supabase.";
+            return;
+        }
+
+        if (!data) {
+            error.textContent = "Datos incorrectos.";
+            return;
+        }
+
+        localStorage.setItem("empleadoLogueado", "true");
+        localStorage.setItem("empleadoId", data.id_empleado);
+        localStorage.setItem("empleadoNumero", data.numero_empleado);
+        localStorage.setItem("empleadoNombre", data.nombre_completo);
+        localStorage.setItem("empleadoCorreo", data.correo || "");
+
+        window.location.href = "panel-empleado.html";
+    }
+
+    document.getElementById("pass").addEventListener("keydown", function(e) {
+        if (e.key === "Enter") {
+            login();
+        }
+    });
+</script>
+
+</body>
+</html>
