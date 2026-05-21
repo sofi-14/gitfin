@@ -312,9 +312,11 @@
                 </div>
 
                 <div class="detail-actions">
-                    <a href="confirmacion-adopcion.html?id=${data.id_mascota}" class="btn btn-green">
-                        🏡 Quiero adoptar a ${data.nombre}
-                    </a>
+                   <a href="#"
+   class="btn btn-primary"
+   onclick="seleccionarMascota(${data.id_mascota})">
+   🏠 Quiero adoptar a ${data.nombre}
+</a>
                     <a href="galeria.html" class="btn btn-secondary">← Regresar</a>
                 </div>
             </div>
@@ -322,6 +324,17 @@
     }
 
     renderDetalle();
+
+function seleccionarMascota(idMascota) {
+
+    // guardar mascota seleccionada
+    localStorage.setItem("id_mascota", idMascota);
+
+    console.log("Mascota guardada:", idMascota);
+
+    // mandar a entrevista
+    window.location.href = "entrevista.html";
+}
 </script>
 
 </body>
