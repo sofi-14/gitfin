@@ -139,11 +139,11 @@ body{
 
         <div class="adoption-msg">
 
-            <span class="big-emoji" id="adopt-emoji">🐾</span>
+            <span class="big-emoji">🐾</span>
 
             <h3>¡Felicidades por tu nueva familia! 🎉</h3>
 
-            <p id="adopt-msg">
+            <p>
                 Has dado el paso más hermoso.
             </p>
 
@@ -156,11 +156,9 @@ body{
                 </span>
 
                 <div style="margin-top:12px;">
-
                     <button class="btn btn-primary" onclick="irPagina('pg-entrevista')">
                         📋 Entrevista
                     </button>
-
                 </div>
 
             </div>
@@ -190,11 +188,9 @@ body{
         <span class="brand">🐾 Huellitas</span>
 
         <div class="header-right">
-
             <button class="btn-logout" onclick="irPagina('pg-adopcion-ok')">
                 ← Regresar
             </button>
-
         </div>
 
     </div>
@@ -212,15 +208,12 @@ body{
             <div style="background:#fff;border:2px solid #c9a97a;padding:28px;margin-top:20px;">
 
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
-
-                    <span id="cal-titulo" style="font-size:1.05rem;color:#5c3317;font-weight:bold;">
+                    <span style="font-size:1.05rem;color:#5c3317;font-weight:bold;">
                         Julio 2026
                     </span>
-
                 </div>
 
-                <div id="cal-semana" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px;text-align:center;font-size:0.75rem;color:#8b6340;font-weight:bold;">
-
+                <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px;text-align:center;font-size:0.75rem;color:#8b6340;font-weight:bold;">
                     <div>Dom</div>
                     <div>Lun</div>
                     <div>Mar</div>
@@ -228,11 +221,9 @@ body{
                     <div>Jue</div>
                     <div>Vie</div>
                     <div>Sáb</div>
-
                 </div>
 
-                <div id="cal-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:20px;">
-
+                <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:20px;">
                     <div class="cal-dia" onclick="seleccionarDia(this,1)">1</div>
                     <div class="cal-dia" onclick="seleccionarDia(this,2)">2</div>
                     <div class="cal-dia" onclick="seleccionarDia(this,3)">3</div>
@@ -240,7 +231,6 @@ body{
                     <div class="cal-dia" onclick="seleccionarDia(this,5)">5</div>
                     <div class="cal-dia" onclick="seleccionarDia(this,6)">6</div>
                     <div class="cal-dia" onclick="seleccionarDia(this,7)">7</div>
-
                 </div>
 
                 <div id="cal-hora-wrap" style="display:none;margin-bottom:20px;">
@@ -248,16 +238,14 @@ body{
                     <label>Hora</label>
 
                     <select id="entrevista-hora" style="width:100%;padding:9px 10px;border:1px solid #c9a97a;">
-
                         <option value="">-- Selecciona una hora --</option>
-                        <option>09:00 hrs</option>
-                        <option>10:00 hrs</option>
-                        <option>11:00 hrs</option>
-                        <option>12:00 hrs</option>
-                        <option>13:00 hrs</option>
-                        <option>14:00 hrs</option>
-                        <option>15:00 hrs</option>
-
+                        <option value="09:00">09:00 hrs</option>
+                        <option value="10:00">10:00 hrs</option>
+                        <option value="11:00">11:00 hrs</option>
+                        <option value="12:00">12:00 hrs</option>
+                        <option value="13:00">13:00 hrs</option>
+                        <option value="14:00">14:00 hrs</option>
+                        <option value="15:00">15:00 hrs</option>
                     </select>
 
                 </div>
@@ -277,9 +265,7 @@ body{
 <div id="pg-entrevista-ok" class="page">
 
     <div class="adoptante-header">
-
         <span class="brand">🐾 Huellitas</span>
-
     </div>
 
     <div class="adoptante-main">
@@ -365,57 +351,75 @@ async function confirmarEntrevista(){
 
     let hora = document.getElementById("entrevista-hora").value;
 
-    if(diaSeleccionado == ""){
+    if(diaSeleccionado === ""){
         alert("Selecciona un día");
         return;
     }
 
-    if(hora == ""){
+    if(hora === ""){
         alert("Selecciona una hora");
         return;
     }
 
-    const { data: authData } = await supabaseClient.auth.getUser();
+    const idMascota = localStorage.getItem("id_mascota");
 
-if (!authData.user) {
-    alert("Debes iniciar sesión primero.");
-    window.location.href = "registro-adoptante.html";
-    return;
-}
-
-const correoUsuario = authData.user.email;
-
-const { data: adoptante, error: adoptanteError } = await supabaseClient
-    .from("adoptantes")
-    .select("id_adoptante")
-    .eq("correo", correoUsuario)
-    .maybeSingle();
-
-if (adoptanteError || !adoptante) {
-    console.error(adoptanteError);
-    alert("No se encontró el adoptante en la base de datos.");
-    return;
-}
-
-const { error } = await supabaseClient
-    .from("entrevistas")
-    .insert([
-        {
-            id_adoptante: adoptante.id_adoptante,
-            fecha: "2026-07-" + String(diaSeleccionado).padStart(2, "0"),
-            hora: hora.replace(" hrs", ""),
-            estado: "pendiente"
-        }
-    ]);
-
-    if(error){
-        console.error(error);
-        alert("Error al guardar la entrevista");
+    if(!idMascota){
+        alert("Primero debes seleccionar una mascota para adoptar.");
+        window.location.href = "galeria.html";
         return;
     }
 
+    const { data: authData, error: authError } = await supabaseClient.auth.getUser();
+
+    if(authError || !authData.user){
+        alert("Debes iniciar sesión primero.");
+        window.location.href = "registro-adoptante.html";
+        return;
+    }
+
+    const correoUsuario = authData.user.email;
+
+    const { data: adoptante, error: adoptanteError } = await supabaseClient
+        .from("adoptantes")
+        .select("id_adoptante, correo")
+        .eq("correo", correoUsuario)
+        .maybeSingle();
+
+    if(adoptanteError || !adoptante){
+        console.error(adoptanteError);
+        alert("No se encontró el adoptante con el correo: " + correoUsuario);
+        return;
+    }
+
+    const fechaEntrevista = "2026-07-" + String(diaSeleccionado).padStart(2, "0");
+
+    const { error: entrevistaError } = await supabaseClient
+        .from("entrevistas")
+        .insert([
+            {
+                id_adoptante: adoptante.id_adoptante,
+                id_mascota: Number(idMascota),
+                fecha: fechaEntrevista,
+                hora: hora,
+                estado: "pendiente"
+            }
+        ]);
+
+    if(entrevistaError){
+        console.error("Error al guardar entrevista:", entrevistaError);
+        alert("Error al guardar la entrevista: " + entrevistaError.message);
+        return;
+    }
+
+    await supabaseClient
+        .from("mascotas")
+        .update({ estado: "pendiente" })
+        .eq("id_mascota", Number(idMascota));
+
     document.getElementById("entrevista-resumen").innerHTML =
-    "Día " + diaSeleccionado + " a las " + hora;
+    "Día " + diaSeleccionado + " de julio de 2026 a las " + hora + " hrs";
+
+    localStorage.removeItem("id_mascota");
 
     irPagina("pg-entrevista-ok");
 }
