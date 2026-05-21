@@ -23,6 +23,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 25px;
         }
 
         .card {
@@ -98,6 +99,14 @@
             text-align: center;
             min-height: 18px;
         }
+
+        .ok {
+            color: #2e7d32;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            text-align: center;
+            min-height: 18px;
+        }
     </style>
 </head>
 
@@ -127,56 +136,88 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
-    const SUPABASE_URL = "https://zafkalfoutcxookmdfqk.supabase.co";
-    const SUPABASE_ANON_KEY = "sb_publishable_C3cL7nw2s_c2SPGMbP8R4A_SuCTkwzI";
+const SUPABASE_URL = "https://zafkalfoutcxookmdfqk.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_C3cL7nw2s_c2SPGMbP8R4A_SuCTkwzI";
 
-    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+);
 
-    async function login() {
-        const user = document.getElementById("user").value.trim();
-        const pass = document.getElementById("pass").value.trim();
-        const error = document.getElementById("error-msg");
+async function login() {
+    const user = document.getElementById("user").value.trim();
+    const pass = document.getElementById("pass").value.trim();
+    const mensaje = document.getElementById("error-msg");
 
-        error.textContent = "";
+    mensaje.textContent = "";
+    mensaje.className = "error";
 
-        if (!user || !pass) {
-            error.textContent = "Por favor llena todos los campos.";
-            return;
-        }
-
-        const { data, error: queryError } = await supabaseClient
-            .from("empleados")
-            .select("id_empleado, numero_empleado, nombre_completo, correo")
-            .eq("numero_empleado", user)
-            .eq("password", pass)
-            .maybeSingle();
-
-        if (queryError) {
-            console.error(queryError);
-            error.textContent = "Ocurrió un error al conectar con Supabase.";
-            return;
-        }
-
-        if (!data) {
-            error.textContent = "Datos incorrectos.";
-            return;
-        }
-
-        localStorage.setItem("empleadoLogueado", "true");
-        localStorage.setItem("empleadoId", data.id_empleado);
-        localStorage.setItem("empleadoNumero", data.numero_empleado);
-        localStorage.setItem("empleadoNombre", data.nombre_completo);
-        localStorage.setItem("empleadoCorreo", data.correo || "");
-
-        window.location.href = "panel-empleado.html";
+    if (!user || !pass) {
+        mensaje.textContent = "Por favor llena todos los campos.";
+        return;
     }
 
-    document.getElementById("pass").addEventListener("keydown", function(e) {
-        if (e.key === "Enter") {
-            login();
-        }
-    });
+    const { data, error: queryError } = await supabaseClient
+        .from("empleados")
+        .select("id_empleado, numero_empleado, nombre_completo, correo, rol")
+        .eq("numero_empleado", user)
+        .eq("password", pass)
+        .maybeSingle();
+
+    if (queryError) {
+        console.error(queryError);
+        mensaje.textContent = "Ocurrió un error al conectar con Supabase.";
+        return;
+    }
+
+    if (!data) {
+        mensaje.textContent = "Usuario o contraseña incorrectos.";
+        return;
+    }
+
+    if (data.rol !== "admin" && data.rol !== "empleado" && data.rol !== "administrador") {
+        mensaje.textContent = "Tu usuario no tiene permisos de empleado.";
+        return;
+    }
+
+    localStorage.setItem("empleado_logueado", "true");
+    localStorage.setItem("rol_empleado", data.rol);
+    localStorage.setItem("empleado_id", data.id_empleado);
+    localStorage.setItem("empleado_numero", data.numero_empleado);
+    localStorage.setItem("empleado_nombre", data.nombre_completo);
+    localStorage.setItem("empleado_correo", data.correo || "");
+
+    /*
+        También guardo estas llaves por compatibilidad
+        con código viejo que ya tenías.
+    */
+    localStorage.setItem("empleadoLogueado", "true");
+    localStorage.setItem("empleadoId", data.id_empleado);
+    localStorage.setItem("empleadoNumero", data.numero_empleado);
+    localStorage.setItem("empleadoNombre", data.nombre_completo);
+    localStorage.setItem("empleadoCorreo", data.correo || "");
+
+    mensaje.className = "ok";
+    mensaje.textContent = "Inicio de sesión correcto. Redirigiendo...";
+
+    setTimeout(function(){
+        window.location.href = "admin-entrevistas.html";
+    }, 700);
+}
+
+document.getElementById("pass").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        login();
+    }
+});
+
+document.getElementById("user").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        login();
+    }
+});
 </script>
 
 </body>
