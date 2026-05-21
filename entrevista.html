@@ -375,14 +375,38 @@ async function confirmarEntrevista(){
         return;
     }
 
-    const { error } = await supabaseClient
-        .from("entrevistas")
-        .insert([
-            {
-                dia: String(diaSeleccionado),
-                hora: hora.replace(" hrs","")
-            }
-        ]);
+    const { data: authData } = await supabaseClient.auth.getUser();
+
+if (!authData.user) {
+    alert("Debes iniciar sesión primero.");
+    window.location.href = "registro-adoptante.html";
+    return;
+}
+
+const correoUsuario = authData.user.email;
+
+const { data: adoptante, error: adoptanteError } = await supabaseClient
+    .from("adoptantes")
+    .select("id_adoptante")
+    .eq("correo", correoUsuario)
+    .maybeSingle();
+
+if (adoptanteError || !adoptante) {
+    console.error(adoptanteError);
+    alert("No se encontró el adoptante en la base de datos.");
+    return;
+}
+
+const { error } = await supabaseClient
+    .from("entrevistas")
+    .insert([
+        {
+            id_adoptante: adoptante.id_adoptante,
+            fecha: "2026-07-" + String(diaSeleccionado).padStart(2, "0"),
+            hora: hora.replace(" hrs", ""),
+            estado: "pendiente"
+        }
+    ]);
 
     if(error){
         console.error(error);
