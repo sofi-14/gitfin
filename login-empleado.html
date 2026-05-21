@@ -1,113 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huellitas - Login Empleado</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Huellitas - Login Empleado</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            font-family: Georgia, 'Times New Roman', serif;
-            background: #f9f5f0;
-            color: #2e1f0e;
-        }
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #f9f5f0;
+    color: #2e1f0e;
+}
 
-        .center-wrap {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 25px;
-        }
+.center-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
 
-        .card {
-            background: #fff;
-            border: 2px solid #c9a97a;
-            padding: 40px 36px;
-            width: 400px;
-            max-width: 95vw;
-        }
+.card {
+    background: #fff;
+    border: 2px solid #c9a97a;
+    padding: 40px 36px;
+    width: 400px;
+    max-width: 95vw;
+}
 
-        h1 {
-            text-align: center;
-            color: #5c3317;
-            margin-bottom: 5px;
-        }
+h1 {
+    text-align: center;
+    color: #5c3317;
+    margin-bottom: 5px;
+}
 
-        .tagline {
-            text-align: center;
-            font-size: 0.85rem;
-            color: #8b6340;
-            margin-bottom: 25px;
-            font-style: italic;
-        }
+.tagline {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #8b6340;
+    margin-bottom: 25px;
+    font-style: italic;
+}
 
-        label {
-            display: block;
-            font-size: 0.82rem;
-            margin-bottom: 5px;
-            font-family: Arial, sans-serif;
-        }
+label {
+    display: block;
+    font-size: 0.82rem;
+    margin-bottom: 5px;
+    font-family: Arial, sans-serif;
+}
 
-        input {
-            width: 100%;
-            padding: 9px;
-            border: 1px solid #c9a97a;
-            margin-bottom: 15px;
-        }
+input {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #c9a97a;
+    margin-bottom: 15px;
+}
 
-        input:focus {
-            border-color: #5c3317;
-            outline: none;
-        }
+input:focus {
+    border-color: #5c3317;
+    outline: none;
+}
 
-        .btn {
-            width: 100%;
-            padding: 10px;
-            background: #5c3317;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: #5c3317;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
 
-        .btn:hover {
-            background: #7a4620;
-        }
+.btn:hover {
+    background: #7a4620;
+}
 
-        .link {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 0.8rem;
-        }
+.link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.8rem;
+}
 
-        .link a {
-            color: #5c3317;
-            text-decoration: underline;
-            cursor: pointer;
-        }
+.link a {
+    color: #5c3317;
+    text-decoration: underline;
+    cursor: pointer;
+}
 
-        .error {
-            color: red;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-            text-align: center;
-            min-height: 18px;
-        }
+.error {
+    color: red;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+    min-height: 18px;
+}
 
-        .ok {
-            color: #2e7d32;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-            text-align: center;
-            min-height: 18px;
-        }
-    </style>
+.ok {
+    color: #2e7d32;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+    min-height: 18px;
+}
+</style>
 </head>
 
 <body>
@@ -161,7 +161,7 @@ async function login() {
 
     const { data, error: queryError } = await supabaseClient
         .from("empleados")
-        .select("id_empleado, numero_empleado, nombre_completo, correo, rol")
+        .select("id_empleado, numero_empleado, nombre_completo, correo, direccion, rol")
         .eq("numero_empleado", user)
         .eq("password", pass)
         .maybeSingle();
@@ -177,33 +177,38 @@ async function login() {
         return;
     }
 
-    if (data.rol !== "admin" && data.rol !== "empleado" && data.rol !== "administrador") {
+    const rol = String(data.rol || "").trim().toLowerCase();
+
+    if (rol !== "admin" && rol !== "empleado" && rol !== "administrador") {
         mensaje.textContent = "Tu usuario no tiene permisos de empleado.";
         return;
     }
 
     localStorage.setItem("empleado_logueado", "true");
-    localStorage.setItem("rol_empleado", data.rol);
+    localStorage.setItem("rol_empleado", rol);
     localStorage.setItem("empleado_id", data.id_empleado);
     localStorage.setItem("empleado_numero", data.numero_empleado);
     localStorage.setItem("empleado_nombre", data.nombre_completo);
     localStorage.setItem("empleado_correo", data.correo || "");
+    localStorage.setItem("empleado_direccion", data.direccion || "");
 
-    /*
-        También guardo estas llaves por compatibilidad
-        con código viejo que ya tenías.
-    */
     localStorage.setItem("empleadoLogueado", "true");
+    localStorage.setItem("empleadoRol", rol);
     localStorage.setItem("empleadoId", data.id_empleado);
     localStorage.setItem("empleadoNumero", data.numero_empleado);
     localStorage.setItem("empleadoNombre", data.nombre_completo);
     localStorage.setItem("empleadoCorreo", data.correo || "");
+    localStorage.setItem("empleadoDireccion", data.direccion || "");
 
     mensaje.className = "ok";
     mensaje.textContent = "Inicio de sesión correcto. Redirigiendo...";
 
     setTimeout(function(){
-        window.location.href = "admin-entrevistas.html";
+        if (rol === "admin" || rol === "administrador") {
+            window.location.href = "admin-entrevistas.html";
+        } else {
+            window.location.href = "panel-empleado.html";
+        }
     }, 700);
 }
 
