@@ -1,3 +1,6 @@
+/* ════════════════════════════════
+ESTILOS EXISTENTES EN EL REPOSITORIO
+════════════════════════════════ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -81,19 +84,26 @@ input[type="password"]:focus {
     font-size: 0.92rem;
     cursor: pointer;
     letter-spacing: 0.04em;
+    text-decoration: none; /* Asegura que los enlaces botón no tengan subrayado */
+    display: inline-block;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
 }
 
-.btn-full { width: 100%; }
+.btn-full { width: 100%; text-align: center; }
 
 .btn-primary { background: #5c3317; color: #fff; }
+.btn-primary:hover { background: #7a4620; }
 
 .btn-outline {
     background: #fff;
     color: #5c3317;
     border: 2px solid #5c3317;
 }
+.btn-outline:hover { background: #f3e7da; }
 
 .btn-secondary { background: #e8d8c4; color: #5c3317; }
+.btn-secondary:hover { background: #dfcbaf; }
 
 .btn-green { background: #2e7d32; color: #fff; }
 
@@ -131,14 +141,14 @@ hr {
     margin: 18px 0;
 }
 
-/* ════════════════════════════════
-HEADER
-════════════════════════════════ */
+/* HEADER */
 header {
     background: #5c3317;
     padding: 0 28px;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Añadido para espaciar elementos */
+    flex-wrap: wrap;
 }
 
 .brand {
@@ -153,6 +163,8 @@ header {
 nav {
     display: flex;
     flex: 1;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -190,9 +202,7 @@ nav a.active {
     cursor: pointer;
 }
 
-/* ════════════════════════════════
-TABLAS
-════════════════════════════════ */
+/* TABLAS */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -237,9 +247,7 @@ table td {
     background: #fdf3e3;
 }
 
-/* ════════════════════════════════
-GALERÍA
-════════════════════════════════ */
+/* GALERÍA */
 .animals-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -266,4 +274,194 @@ GALERÍA
 .animal-name {
     font-weight: bold;
     color: #5c3317;
+}
+
+/* ════════════════════════════════
+ESTILOS AGREGADOS PARA LA LANDING Y BENEFICIOS
+════════════════════════════════ */
+
+/* HERO SECCIÓN PRINCIPAL */
+.landing {
+    max-width: 1180px;
+    margin: 0 auto;
+    min-height: calc(100vh - 130px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 28px;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.landing-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+.landing-text h1 {
+    font-size: 2.4rem;
+    color: #5c3317;
+    margin-bottom: 18px;
+    line-height: 1.2;
+}
+
+.landing-text p {
+    font-family: Arial, sans-serif;
+    font-size: 0.96rem;
+    color: #4a3020;
+    margin-bottom: 14px;
+    max-width: 560px;
+}
+
+.landing-actions {
+    margin-top: 22px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.landing-img {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+
+.landing-img img {
+    width: 100%;
+    max-width: 460px;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+    object-fit: cover;
+}
+
+/* SECCIÓN TARJETAS DE ADOPCIÓN */
+.benefits-section {
+    max-width: 1180px;
+    margin: 40px auto 80px auto;
+    padding: 0 28px;
+    text-align: center;
+}
+
+.benefits-section h2 {
+    font-size: 2.2rem;
+    color: #5c3317;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: #7a5c43;
+    margin-bottom: 40px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.benefit-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    border: 2px solid #c9a97a; /* Usando el mismo tono dorado de sus .card originales */
+    box-shadow: 0 4px 12px rgba(92, 51, 23, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(92, 51, 23, 0.15);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.benefit-card h3 {
+    font-size: 1.25rem;
+    color: #5c3317;
+    margin-bottom: 12px;
+}
+
+.benefit-card p {
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    color: #554030;
+    line-height: 1.5;
+}
+
+/* SECCIÓN EXTRA Y FOOTER */
+.extra {
+    background: #fff;
+    border-top: 2px solid #e0d0be;
+    border-bottom: 2px solid #e0d0be;
+    padding: 42px 28px;
+    text-align: center;
+}
+
+.extra h2 {
+    font-size: 1.6rem;
+    color: #5c3317;
+    margin-bottom: 12px;
+}
+
+.extra p {
+    font-family: Arial, sans-serif;
+    font-size: 0.92rem;
+    color: #4a3020;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+footer {
+    background: #5c3317;
+    color: #d4b896;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    font-family: Arial, sans-serif;
+}
+
+/* RESPONSIVIDAD PARA PANTALLAS CHICAS */
+@media (max-width: 768px) {
+    header {
+        padding: 14px 18px;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    nav {
+        justify-content: center;
+    }
+    
+    .header-user {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .landing {
+        padding: 40px 18px;
+        text-align: center;
+    }
+
+    .landing-text p {
+        max-width: 100%;
+    }
+
+    .landing-actions {
+        justify-content: center;
+    }
+
+    .landing-text h1 {
+        font-size: 2rem;
+    }
+    
+    .benefits-section h2 {
+        font-size: 1.8rem;
+    }
 }
