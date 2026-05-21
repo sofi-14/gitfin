@@ -284,204 +284,236 @@
 </head>
 <body>
 
-    <header>
-        <span class="brand">🐾 Huellitas</span>
+<header>
+    <span class="brand">🐾 Huellitas</span>
 
-        <nav>
-            <a class="active" onclick="showSection('mascotas', this)">Mascotas</a>
-            <a onclick="showSection('horarios', this)">Horarios</a>
-            <a onclick="showSection('perfil', this)">Mi Cuenta</a>
-        </nav>
+    <nav>
+        <a class="active" onclick="showSection('mascotas', this)">Mascotas</a>
+        <a onclick="showSection('horarios', this)">Horarios</a>
+        <a onclick="showSection('perfil', this)">Mi Cuenta</a>
+    </nav>
 
-        <div class="header-user">
-            <span>Miranda R.</span>
-            <a href="login-empleado.html" class="btn-logout">Cerrar sesión</a>
-        </div>
-    </header>
+    <div class="header-user">
+        <span id="empleado-nombre-header">Empleado</span>
+        <a href="login-empleado.html" class="btn-logout">Cerrar sesión</a>
+    </div>
+</header>
 
-    <main>
-        <!-- MASCOTAS -->
-        <div id="sec-mascotas" class="section active">
-            <h2>Mascotas del Refugio</h2>
-            <p class="sec-desc">Consulta las mascotas a tu cargo, las adoptadas y las que buscan hogar.</p>
+<main>
+    <div id="sec-mascotas" class="section active">
+        <h2>Mascotas del Refugio</h2>
+        <p class="sec-desc">Consulta las mascotas a tu cargo, las adoptadas y las que buscan hogar.</p>
 
-            <div class="tab-bar">
-                <button class="tab-btn active" onclick="showTab('cuidado', this)">Mis mascotas a cuidar</button>
-                <button class="tab-btn" onclick="showTab('adoptadas', this)">Adoptadas</button>
-                <button class="tab-btn" onclick="showTab('espera', this)">Buscando hogar</button>
-            </div>
-
-            <div id="tab-cuidado">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Tipo</th>
-                            <th>Edad</th>
-                            <th>Sexo</th>
-                            <th>Habitación</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Manchas</td><td>Gato</td><td>2 años</td><td>Macho</td><td>B-3</td><td><span class="badge badge-care">A tu cuidado</span></td></tr>
-                        <tr><td>Coco</td><td>Perro</td><td>4 años</td><td>Hembra</td><td>C-1</td><td><span class="badge badge-care">A tu cuidado</span></td></tr>
-                        <tr><td>Luna</td><td>Gata</td><td>1 año</td><td>Hembra</td><td>A-2</td><td><span class="badge badge-care">A tu cuidado</span></td></tr>
-                        <tr><td>Peludo</td><td>Perro</td><td>3 años</td><td>Macho</td><td>D-4</td><td><span class="badge badge-care">A tu cuidado</span></td></tr>
-                        <tr><td>Tigre</td><td>Gato</td><td>5 años</td><td>Macho</td><td>B-1</td><td><span class="badge badge-care">A tu cuidado</span></td></tr>
-                        <tr><td>Nube</td><td>Perro</td><td>6 meses</td><td>Hembra</td><td>A-5</td><td><span class="badge badge-care">A tu cuidado</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div id="tab-adoptadas" style="display:none;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Tipo</th>
-                            <th>Edad</th>
-                            <th>Sexo</th>
-                            <th>Fecha de adopción</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Max</td><td>Perro</td><td>2 años</td><td>Macho</td><td>10 Ene 2025</td><td><span class="badge badge-adopted">Adoptado</span></td></tr>
-                        <tr><td>Misi</td><td>Gata</td><td>3 años</td><td>Hembra</td><td>22 Feb 2025</td><td><span class="badge badge-adopted">Adoptada</span></td></tr>
-                        <tr><td>Bruno</td><td>Perro</td><td>5 años</td><td>Macho</td><td>03 Mar 2025</td><td><span class="badge badge-adopted">Adoptado</span></td></tr>
-                        <tr><td>Caramelo</td><td>Gato</td><td>1 año</td><td>Macho</td><td>15 Abr 2025</td><td><span class="badge badge-adopted">Adoptado</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div id="tab-espera" style="display:none;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Tipo</th>
-                            <th>Edad</th>
-                            <th>Sexo</th>
-                            <th>En refugio desde</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Canela</td><td>Perro</td><td>7 meses</td><td>Hembra</td><td>Ene 2025</td><td><span class="badge badge-waiting">Buscando hogar</span></td></tr>
-                        <tr><td>Sombra</td><td>Gato</td><td>4 años</td><td>Macho</td><td>Feb 2025</td><td><span class="badge badge-waiting">Buscando hogar</span></td></tr>
-                        <tr><td>Rocky</td><td>Perro</td><td>2 años</td><td>Macho</td><td>Mar 2025</td><td><span class="badge badge-waiting">Buscando hogar</span></td></tr>
-                        <tr><td>Bolita</td><td>Gata</td><td>8 meses</td><td>Hembra</td><td>Mar 2025</td><td><span class="badge badge-waiting">Buscando hogar</span></td></tr>
-                        <tr><td>Chispas</td><td>Perro</td><td>1 año</td><td>Hembra</td><td>Abr 2025</td><td><span class="badge badge-waiting">Buscando hogar</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="tab-bar">
+            <button class="tab-btn active" onclick="showTab('cuidado', this)">Mis mascotas a cuidar</button>
+            <button class="tab-btn" onclick="showTab('adoptadas', this)">Adoptadas</button>
+            <button class="tab-btn" onclick="showTab('espera', this)">Buscando hogar</button>
         </div>
 
-        <!-- HORARIOS -->
-        <div id="sec-horarios" class="section">
-            <h2>Mis Horarios</h2>
-            <p class="sec-desc">Tu turno asignado y los horarios de cuidado de cada mascota.</p>
-
-            <div class="turno-box">
-                <div class="turno-item"><span class="lbl">Turno</span><span class="val">Matutino</span></div>
-                <div class="turno-item"><span class="lbl">Horario</span><span class="val">07:00 – 14:00 hrs</span></div>
-                <div class="turno-item"><span class="lbl">Días</span><span class="val">Lunes a Viernes</span></div>
-                <div class="turno-item"><span class="lbl">Área</span><span class="val">Habitaciones A y B</span></div>
-            </div>
-
+        <div id="tab-cuidado">
             <table>
                 <thead>
                     <tr>
-                        <th>Mascota</th>
+                        <th>Nombre</th>
                         <th>Tipo</th>
-                        <th>Actividad</th>
-                        <th>Hora</th>
-                        <th>Días</th>
+                        <th>Edad</th>
+                        <th>Sexo</th>
+                        <th>Habitación</th>
+                        <th>Estado</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Manchas</td><td>Gato</td><td>Alimentación y limpieza</td><td>07:30</td><td>Lun, Mié, Vie</td></tr>
-                    <tr><td>Coco</td><td>Perro</td><td>Paseo matutino</td><td>08:00</td><td>Lun, Mar, Jue</td></tr>
-                    <tr><td>Luna</td><td>Gata</td><td>Alimentación y medicamento</td><td>08:30</td><td>Mar, Jue</td></tr>
-                    <tr><td>Peludo</td><td>Perro</td><td>Baño semanal</td><td>09:00</td><td>Mié</td></tr>
-                    <tr><td>Tigre</td><td>Gato</td><td>Revisión veterinaria</td><td>10:00</td><td>Lun</td></tr>
-                    <tr><td>Nube</td><td>Perro</td><td>Socialización y juego</td><td>10:30</td><td>Mar, Vie</td></tr>
-                    <tr><td>Manchas</td><td>Gato</td><td>Limpieza de habitación</td><td>11:00</td><td>Mar, Jue</td></tr>
-                    <tr><td>Coco</td><td>Perro</td><td>Alimentación tarde</td><td>13:00</td><td>Lun, Mié, Vie</td></tr>
+                    <tr><td>Manchas</td><td>Gato</td><td>2 años</td><td>Macho</td><td>B-3</td><td><span class="badge badge-care">A tu cuidado</span></td></tr>
+                    <tr><td>Coco</td><td>Perro</td><td>4 años</td><td>Hembra</td><td>C-1</td><td><span class="badge badge-care">A tu cuidado</span></td></tr>
+                    <tr><td>Luna</td><td>Gata</td><td>1 año</td><td>Hembra</td><td>A-2</td><td><span class="badge badge-care">A tu cuidado</span></td></tr>
+                    <tr><td>Peludo</td><td>Perro</td><td>3 años</td><td>Macho</td><td>D-4</td><td><span class="badge badge-care">A tu cuidado</span></td></tr>
+                    <tr><td>Tigre</td><td>Gato</td><td>5 años</td><td>Macho</td><td>B-1</td><td><span class="badge badge-care">A tu cuidado</span></td></tr>
+                    <tr><td>Nube</td><td>Perro</td><td>6 meses</td><td>Hembra</td><td>A-5</td><td><span class="badge badge-care">A tu cuidado</span></td></tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- PERFIL -->
-        <div id="sec-perfil" class="section">
-            <h2>Mi Cuenta</h2>
-            <p class="sec-desc">Información personal del empleado.</p>
-
-            <p class="profile-name">Miranda Ramírez López</p>
-
-            <table class="profile-table">
-                <tr><td>Nombre completo</td><td>Miranda Ramírez López</td></tr>
-                <tr><td>Fecha de nacimiento</td><td>14 de marzo de 1998</td></tr>
-                <tr><td>CURP</td><td>RALE980314MDFMRN06</td></tr>
-                <tr><td>Dirección</td><td>Calle Girasoles #14, Col. Jardines, Guadalajara, Jalisco</td></tr>
-                <tr><td>Número de empleado</td><td>EMP-0042</td></tr>
+        <div id="tab-adoptadas" style="display:none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Edad</th>
+                        <th>Sexo</th>
+                        <th>Fecha de adopción</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Max</td><td>Perro</td><td>2 años</td><td>Macho</td><td>10 Ene 2025</td><td><span class="badge badge-adopted">Adoptado</span></td></tr>
+                    <tr><td>Misi</td><td>Gata</td><td>3 años</td><td>Hembra</td><td>22 Feb 2025</td><td><span class="badge badge-adopted">Adoptada</span></td></tr>
+                    <tr><td>Bruno</td><td>Perro</td><td>5 años</td><td>Macho</td><td>03 Mar 2025</td><td><span class="badge badge-adopted">Adoptado</span></td></tr>
+                    <tr><td>Caramelo</td><td>Gato</td><td>1 año</td><td>Macho</td><td>15 Abr 2025</td><td><span class="badge badge-adopted">Adoptado</span></td></tr>
+                </tbody>
             </table>
         </div>
-    </main>
+
+        <div id="tab-espera" style="display:none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Edad</th>
+                        <th>Sexo</th>
+                        <th>En refugio desde</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Canela</td><td>Perro</td><td>7 meses</td><td>Hembra</td><td>Ene 2025</td><td><span class="badge badge-waiting">Buscando hogar</span></td></tr>
+                    <tr><td>Sombra</td><td>Gato</td><td>4 años</td><td>Macho</td><td>Feb 2025</td><td><span class="badge badge-waiting">Buscando hogar</span></td></tr>
+                    <tr><td>Rocky</td><td>Perro</td><td>2 años</td><td>Macho</td><td>Mar 2025</td><td><span class="badge badge-waiting">Buscando hogar</span></td></tr>
+                    <tr><td>Bolita</td><td>Gata</td><td>8 meses</td><td>Hembra</td><td>Mar 2025</td><td><span class="badge badge-waiting">Buscando hogar</span></td></tr>
+                    <tr><td>Chispas</td><td>Perro</td><td>1 año</td><td>Hembra</td><td>Abr 2025</td><td><span class="badge badge-waiting">Buscando hogar</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="sec-horarios" class="section">
+        <h2>Mis Horarios</h2>
+        <p class="sec-desc">Tu turno asignado y los horarios de cuidado de cada mascota.</p>
+
+        <div class="turno-box">
+            <div class="turno-item"><span class="lbl">Turno</span><span class="val">Matutino</span></div>
+            <div class="turno-item"><span class="lbl">Horario</span><span class="val">07:00 – 14:00 hrs</span></div>
+            <div class="turno-item"><span class="lbl">Días</span><span class="val">Lunes a Viernes</span></div>
+            <div class="turno-item"><span class="lbl">Área</span><span class="val">Habitaciones A y B</span></div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Mascota</th>
+                    <th>Tipo</th>
+                    <th>Actividad</th>
+                    <th>Hora</th>
+                    <th>Días</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Manchas</td><td>Gato</td><td>Alimentación y limpieza</td><td>07:30</td><td>Lun, Mié, Vie</td></tr>
+                <tr><td>Coco</td><td>Perro</td><td>Paseo matutino</td><td>08:00</td><td>Lun, Mar, Jue</td></tr>
+                <tr><td>Luna</td><td>Gata</td><td>Alimentación y medicamento</td><td>08:30</td><td>Mar, Jue</td></tr>
+                <tr><td>Peludo</td><td>Perro</td><td>Baño semanal</td><td>09:00</td><td>Mié</td></tr>
+                <tr><td>Tigre</td><td>Gato</td><td>Revisión veterinaria</td><td>10:00</td><td>Lun</td></tr>
+                <tr><td>Nube</td><td>Perro</td><td>Socialización y juego</td><td>10:30</td><td>Mar, Vie</td></tr>
+                <tr><td>Manchas</td><td>Gato</td><td>Limpieza de habitación</td><td>11:00</td><td>Mar, Jue</td></tr>
+                <tr><td>Coco</td><td>Perro</td><td>Alimentación tarde</td><td>13:00</td><td>Lun, Mié, Vie</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="sec-perfil" class="section">
+        <h2>Mi Cuenta</h2>
+        <p class="sec-desc">Información personal del empleado.</p>
+
+        <p class="profile-name" id="perfil-nombre">Empleado</p>
+
+        <table class="profile-table">
+            <tr><td>Nombre completo</td><td id="perfil-nombre-completo">—</td></tr>
+            <tr><td>Número de empleado</td><td id="perfil-numero">—</td></tr>
+            <tr><td>Correo</td><td id="perfil-correo">—</td></tr>
+            <tr><td>Rol</td><td id="perfil-rol">—</td></tr>
+        </table>
+    </div>
+</main>
 
 <script>
-    //  Verificar sesión
-    const logueado = localStorage.getItem("empleadoLogueado");
+const logueadoNuevo = localStorage.getItem("empleado_logueado");
+const logueadoViejo = localStorage.getItem("empleadoLogueado");
 
-    if (!logueado) {
-        window.location.href = "login-empleado.html";
-    }
+const rolNuevo = localStorage.getItem("rol_empleado");
+const rolViejo = localStorage.getItem("empleadoRol");
 
-    //  Cargar datos del empleado
-    const nombre = localStorage.getItem("empleadoNombre") || "Empleado";
+const rol = rolNuevo || rolViejo;
 
-    document.querySelector(".header-user span").textContent = nombre.split(" ")[0];
+if (logueadoNuevo !== "true" && logueadoViejo !== "true") {
+    alert("Debes iniciar sesión como empleado.");
+    window.location.href = "login-empleado.html";
+}
 
-    // Cerrar sesión
-    document.querySelector(".btn-logout").addEventListener("click", function(e) {
-        e.preventDefault();
+if (rol !== "empleado" && rol !== "admin" && rol !== "administrador") {
+    alert("No tienes permisos para entrar.");
+    window.location.href = "login-empleado.html";
+}
 
-        localStorage.removeItem("empleadoLogueado");
-        localStorage.removeItem("empleadoId");
-        localStorage.removeItem("empleadoNumero");
-        localStorage.removeItem("empleadoNombre");
-        localStorage.removeItem("empleadoCorreo");
+const nombre =
+    localStorage.getItem("empleado_nombre") ||
+    localStorage.getItem("empleadoNombre") ||
+    "Empleado";
 
-        window.location.href = "login-empleado.html";
+const numero =
+    localStorage.getItem("empleado_numero") ||
+    localStorage.getItem("empleadoNumero") ||
+    "Sin número";
+
+const correo =
+    localStorage.getItem("empleado_correo") ||
+    localStorage.getItem("empleadoCorreo") ||
+    "Sin correo";
+
+document.getElementById("empleado-nombre-header").textContent =
+    nombre.split(" ")[0] + " (" + rol + ")";
+
+document.getElementById("perfil-nombre").textContent = nombre;
+document.getElementById("perfil-nombre-completo").textContent = nombre;
+document.getElementById("perfil-numero").textContent = numero;
+document.getElementById("perfil-correo").textContent = correo;
+document.getElementById("perfil-rol").textContent = rol;
+
+document.querySelector(".btn-logout").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    localStorage.removeItem("empleado_logueado");
+    localStorage.removeItem("rol_empleado");
+    localStorage.removeItem("empleado_id");
+    localStorage.removeItem("empleado_numero");
+    localStorage.removeItem("empleado_nombre");
+    localStorage.removeItem("empleado_correo");
+
+    localStorage.removeItem("empleadoLogueado");
+    localStorage.removeItem("empleadoRol");
+    localStorage.removeItem("empleadoId");
+    localStorage.removeItem("empleadoNumero");
+    localStorage.removeItem("empleadoNombre");
+    localStorage.removeItem("empleadoCorreo");
+
+    window.location.href = "login-empleado.html";
+});
+
+function showSection(id, el) {
+    document.querySelectorAll('.section').forEach(function(section) {
+        section.classList.remove('active');
     });
 
-    //  Navegación
-    function showSection(id, el) {
-        document.querySelectorAll('.section').forEach(function(section) {
-            section.classList.remove('active');
-        });
+    document.querySelectorAll('nav a').forEach(function(link) {
+        link.classList.remove('active');
+    });
 
-        document.querySelectorAll('nav a').forEach(function(link) {
-            link.classList.remove('active');
-        });
+    document.getElementById('sec-' + id).classList.add('active');
+    el.classList.add('active');
+}
 
-        document.getElementById('sec-' + id).classList.add('active');
-        el.classList.add('active');
-    }
+function showTab(id, el) {
+    ['cuidado', 'adoptadas', 'espera'].forEach(function(tab) {
+        document.getElementById('tab-' + tab).style.display = 'none';
+    });
 
-    function showTab(id, el) {
-        ['cuidado', 'adoptadas', 'espera'].forEach(function(tab) {
-            document.getElementById('tab-' + tab).style.display = 'none';
-        });
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+    });
 
-        document.querySelectorAll('.tab-btn').forEach(function(btn) {
-            btn.classList.remove('active');
-        });
-
-        document.getElementById('tab-' + id).style.display = 'block';
-        el.classList.add('active');
-    }
+    document.getElementById('tab-' + id).style.display = 'block';
+    el.classList.add('active');
+}
 </script>
 
 </body>
