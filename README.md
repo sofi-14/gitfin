@@ -1,50 +1,89 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f4f8fb;
-    color: #333;
-}
+##Integrantes 
+-1 Iker Gael Cruz Vargas
+-2 Sofía Yared Hernández Alavez
+-3 Avendaño Roblero Diana Lizzete
+-4 María Fernanda Santos Fuentesbody {
 
-header {
-    background: linear-gradient(135deg, #73cde8, #4aaed1);
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-}
+ Huellitas
 
-.card {
-    background: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
+Proyecto web orientado a la adopción responsable de mascotas, desarrollado como parte del curso de Bases de Datos y Desarrollo Web.
 
-.animal {
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    width: 220px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
+## Descripción
 
-.animal:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
+Huellitas es una plataforma web diseñada para facilitar el proceso de adopción de animales mediante un sistema interactivo y amigable tanto para los usarios como para los administradores de dicho refugio de animales, generando una interaccion entre adoptante y persona a cargo de la mascota, además de ser mas estrictos con los procesos de adopción.
 
-button {
-    background-color: #73cde8;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
+## proyecto permite:
 
-button:hover {
-    background-color: #4aaed1;
-}
+* visualizar mascotas disponibles,
+* consultar información detallada,
+* realizar entrevistas de adopción,
+* gestionar donaciones,
+* y administrar solicitudes desde un panel administrativo.
+
+# Tecnologías utilizadas
+
+## Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+
+## Backend / Base de Datos
+
+* Supabase
+* PostgreSQL
+
+## Herramientas
+
+* Git
+* GitHub
+* GitHub Pages
+* VS Code
+
+# Repositorio
+
+Repositorio oficial:
+
+https://github.com/sofi-14/gitfin
+
+# Página web
+
+Sitio desplegado en GitHub Pages:
+
+https://sofi-14.github.io/gitfin/
+
+# 📷 Capturas del proyecto
+
+## Página principal
+
+```html
+<img 
+  src="imagenes/inicio.png" 
+  alt="Página principal de Huellitas"
+  loading="lazy"
+  width="700">
+```
+
+## Galería de mascotas
+
+```html
+<img 
+  src="imagenes/galeria.png" 
+  alt="Galería de mascotas"
+  loading="lazy"
+  width="700">
+```
+
+---
+
+# Funcionalidades
+
+* Registro de usuarios
+* Inicio de sesión
+* Visualización de mascotas
+* Solicitud de adopción
+* Entrevistas
+* Donaciones
+* Panel administrativo
+* Gestión de animales
+
