@@ -198,7 +198,7 @@ Gracias a esto, se pudo demostrar la completitud relacional del sistema, asegura
 
 <br>
 
-![Captura 1](url imagen)
+![Diagrama del proyecto](5577037d-d961-4395-b17b-b45b5c59c3a1.jpeg)
 
 ![Captura 2](url imagen)
 
