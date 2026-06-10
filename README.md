@@ -50,7 +50,7 @@ Los adoptantes deben proporcionar información relevante para garantizar una ado
 - Revisar entrevistas realizadas.
 - Dar seguimiento posterior a la adopción.
 
-## 📅 Control insuficiente de entrevistas y solicitudes
+##  Control insuficiente de entrevistas y solicitudes
 
 El proceso de adopción requiere diversas etapas de validación. Sin una plataforma adecuada resulta complicado:
 
@@ -59,20 +59,20 @@ El proceso de adopción requiere diversas etapas de validación. Sin una platafo
 - Aprobar o rechazar candidatos.
 - Mantener un historial de decisiones.
 
-## 🔒 Seguridad y control de acceso
+##  Seguridad y control de acceso
 
 No todos los usuarios deben tener los mismos permisos dentro del sistema.
 
 Se identificó la necesidad de implementar:
 
-- 👨‍💼 Administradores con control total del sistema.
-- 👩‍💻 Empleados con permisos limitados.
-- 🔐 Protección de información sensible.
-- 📋 Control sobre modificaciones y eliminaciones de registros.
+-  Administradores con control total del sistema.
+-  Empleados con permisos limitados.
+-  Protección de información sensible.
+-  Control sobre modificaciones y eliminaciones de registros.
 
 ---
 
-# 💡 Solución Propuesta: BD_Huellitas
+#  Solución Propuesta: BD_Huellitas
 
 Como respuesta a estas necesidades surge **BD_Huellitas**, una plataforma web diseñada para digitalizar y centralizar la administración completa de un refugio de animales.
 
