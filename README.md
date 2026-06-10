@@ -4,24 +4,6 @@
 
 ### Introducción
 
-## 📊 Modelo Entidad Relación (ER)
-
-<p align="center">
-  <img src="./modeloentidadrelacion.png" alt="Modelo ER" width="100%">
-</p>
-
-## 📈 Modelo Entidad Relación Extendido (EER)
-
-<p align="center">
-  <img src="./modeloentidadrelacionextendido.png" alt="Modelo EER" width="100%">
-</p>
-
-## 🔗 Modelo Relacional
-
-<p align="center">
-  <img src="./modelo-relacional.png" alt="Modelo Relacional" width="100%">
-</p>
-
 BD_Huellitas es un sistema web desarrollado con el propósito de apoyar la gestión de un refugio de animales, permitiendo administrar de manera eficiente los procesos relacionados con la adopción de mascotas. El proyecto surge de la necesidad de digitalizar tareas que normalmente se realizan de forma manual, tales como el registro de adoptantes, la administración de mascotas disponibles, el seguimiento de solicitudes de adopción y la gestión de entrevistas previas a la entrega de los animales.
 
 El sistema busca facilitar la interacción entre los usuarios interesados en adoptar y el personal encargado del refugio, proporcionando una plataforma intuitiva, organizada y segura para ambas partes.
@@ -33,6 +15,19 @@ El sistema busca facilitar la interacción entre los usuarios interesados en ado
 Desarrollar una aplicación web que permita administrar integralmente los procesos de adopción de mascotas dentro de un refugio, garantizando el correcto almacenamiento, consulta y actualización de la información.
 
 ---
+# Problemática
+
+En la actualidad, muchos refugios de animales enfrentan importantes desafíos relacionados con la gestión y administración de la información de sus procesos de adopción. A medida que aumenta la cantidad de mascotas rescatadas y de personas interesadas en brindarles un hogar, los métodos tradicionales de organización, basados en documentos físicos y hojas de cálculo, resultan insuficientes para mantener un control eficiente y seguro de los datos.
+
+Durante el análisis realizado para este proyecto, se identificó que el refugio presentaba dificultades para registrar, consultar y dar seguimiento a la información de mascotas, adoptantes y adopciones. La dispersión de los registros provocaba inconsistencias, duplicidad de datos y retrasos en la localización de información relevante. Además, la ausencia de un sistema centralizado complicaba el seguimiento histórico de cada proceso de adopción, dificultando conocer con precisión el estado actual de una mascota o el avance de una solicitud.
+
+Otro aspecto crítico detectado fue la necesidad de garantizar una correcta relación entre los diferentes elementos que intervienen en el proceso de adopción. Cada mascota requiere contar con información específica sobre sus características, historial y estado actual; cada adoptante necesita ser identificado y validado adecuadamente; y cada adopción debe quedar documentada de manera formal para asegurar la trazabilidad completa del proceso. Sin una estructura organizada, el riesgo de pérdida de información y errores administrativos aumenta considerablemente.
+
+Asimismo, se observó la necesidad de implementar mecanismos de control de acceso que permitan diferenciar las responsabilidades de cada usuario dentro del sistema. Mientras que los empleados deben poder registrar y consultar información operativa, las acciones críticas relacionadas con la modificación o eliminación de registros deben estar reservadas exclusivamente para administradores autorizados, garantizando así la integridad y seguridad de la información.
+
+Ante esta situación surge **BD_Huellitas**, una plataforma web diseñada para digitalizar y optimizar la gestión integral de un refugio de animales. El sistema centraliza toda la información relacionada con mascotas, adoptantes, solicitudes, entrevistas, adopciones y empleados en una única base de datos estructurada, permitiendo mejorar la organización, reducir errores operativos, agilizar los procesos administrativos y promover una adopción responsable y transparente.
+
+Más que una simple página de adopciones, **Huellitas** representa una solución tecnológica orientada a fortalecer el bienestar animal mediante una administración eficiente, segura y escalable, capaz de adaptarse al crecimiento y necesidades futuras de cualquier refugio.
 
 # Tecnologías Utilizadas
 
@@ -221,6 +216,12 @@ Atributos:
 
 Una vez definidas las entidades se procedió a construir el Modelo Entidad Relación:
 
+## 📊 Modelo Entidad Relación (ER)
+
+<p align="center">
+  <img src="./modeloentidadrelacion.png" alt="Modelo ER" width="100%">
+</p>
+
 
 ---
 
@@ -228,6 +229,11 @@ Una vez definidas las entidades se procedió a construir el Modelo Entidad Relac
 
 Posteriormente se extendió el modelo ER para obtener un Modelo Entidad Relación Extendido (EER).
 
+## 📈 Modelo Entidad Relación Extendido (EER)
+
+<p align="center">
+  <img src="./modeloentidadrelacionextendido.png" alt="Modelo EER" width="100%">
+</p>
 
 
 # Modelo Relacional
@@ -235,6 +241,12 @@ Posteriormente se extendió el modelo ER para obtener un Modelo Entidad Relació
 Después del diseño conceptual se transformó el modelo a tablas relacionales.
 
 Las principales tablas fueron:
+
+## 🔗 Modelo Relacional
+
+<p align="center">
+  <img src="./modelo-relacional.png" alt="Modelo Relacional" width="100%">
+</p>
 
 * mascotas
 * adoptantes
@@ -401,9 +413,26 @@ Además de buscar priorizar la seguridad e integridad de cada animalito que salg
 La interfaz fue diseñada para ser intuitiva y comprensible incluso para usuarios sin experiencia tecnológica.
 
 ---
+
+⭐ ¿Por qué elegir Huellitas?
+
+Huellitas no es únicamente una página para mostrar mascotas. Es una plataforma pensada para administrar de forma completa el proceso de adopción.
+
+A diferencia de otros sitios simples de adopción, Huellitas permite:
+
+Registrar mascotas.
+Consultar adoptantes.
+Gestionar solicitudes.
+Programar entrevistas.
+Controlar adopciones.
+Administrar empleados.
+Registrar donaciones.
+Dar seguimiento al proceso.
+
+Además, el sistema prioriza la seguridad e integridad de cada animalito que sale del refugio. La adopción no se maneja como una simple publicación, sino como un proceso responsable con validación, entrevista y seguimiento.
+
+Esto convierte a Huellitas en una solución más completa, ordenada y confiable para refugios que necesitan digitalizar sus procesos.
 Prueba de usuario admnistrador:
 
 Usuario: EMP-0042 Contraseña: 1234
 Repositorio general: https://github.com/gabrielhuav/DB-Coursework-2026-2
-
-Además de facilitar la administración interna del refugio, el sistema promueve la adopción responsable mediante mecanismos de validación, entrevistas y seguimiento posterior, contribuyendo al bienestar de las mascotas y fortaleciendo el vínculo entre los animales rescatados y sus futuros hogares.
