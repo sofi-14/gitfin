@@ -15,19 +15,97 @@ El sistema busca facilitar la interacción entre los usuarios interesados en ado
 Desarrollar una aplicación web que permita administrar integralmente los procesos de adopción de mascotas dentro de un refugio, garantizando el correcto almacenamiento, consulta y actualización de la información.
 
 ---
-# Problemática
+# 🚨 Problemática
 
-En la actualidad, muchos refugios de animales enfrentan importantes desafíos relacionados con la gestión y administración de la información de sus procesos de adopción. A medida que aumenta la cantidad de mascotas rescatadas y de personas interesadas en brindarles un hogar, los métodos tradicionales de organización, basados en documentos físicos y hojas de cálculo, resultan insuficientes para mantener un control eficiente y seguro de los datos.
+Actualmente, muchos refugios de animales enfrentan dificultades para administrar de manera eficiente la información relacionada con sus mascotas, adoptantes y procesos de adopción. Conforme aumenta la cantidad de animales rescatados y personas interesadas en adoptar, los métodos tradicionales de gestión dejan de ser suficientes para garantizar un control adecuado de la información.
 
-Durante el análisis realizado para este proyecto, se identificó que el refugio presentaba dificultades para registrar, consultar y dar seguimiento a la información de mascotas, adoptantes y adopciones. La dispersión de los registros provocaba inconsistencias, duplicidad de datos y retrasos en la localización de información relevante. Además, la ausencia de un sistema centralizado complicaba el seguimiento histórico de cada proceso de adopción, dificultando conocer con precisión el estado actual de una mascota o el avance de una solicitud.
+Durante el análisis realizado para el desarrollo de **BD_Huellitas**, se identificaron diversas problemáticas que afectan el funcionamiento diario del refugio:
 
-Otro aspecto crítico detectado fue la necesidad de garantizar una correcta relación entre los diferentes elementos que intervienen en el proceso de adopción. Cada mascota requiere contar con información específica sobre sus características, historial y estado actual; cada adoptante necesita ser identificado y validado adecuadamente; y cada adopción debe quedar documentada de manera formal para asegurar la trazabilidad completa del proceso. Sin una estructura organizada, el riesgo de pérdida de información y errores administrativos aumenta considerablemente.
+## 📂 Información dispersa y difícil de administrar
 
-Asimismo, se observó la necesidad de implementar mecanismos de control de acceso que permitan diferenciar las responsabilidades de cada usuario dentro del sistema. Mientras que los empleados deben poder registrar y consultar información operativa, las acciones críticas relacionadas con la modificación o eliminación de registros deben estar reservadas exclusivamente para administradores autorizados, garantizando así la integridad y seguridad de la información.
+Gran parte de los registros se almacenan en documentos físicos o archivos de Excel, lo que provoca:
 
-Ante esta situación surge **BD_Huellitas**, una plataforma web diseñada para digitalizar y optimizar la gestión integral de un refugio de animales. El sistema centraliza toda la información relacionada con mascotas, adoptantes, solicitudes, entrevistas, adopciones y empleados en una única base de datos estructurada, permitiendo mejorar la organización, reducir errores operativos, agilizar los procesos administrativos y promover una adopción responsable y transparente.
+- Pérdida de información importante.
+- Duplicidad de registros.
+- Errores al capturar datos.
+- Dificultad para localizar información histórica.
 
-Más que una simple página de adopciones, **Huellitas** representa una solución tecnológica orientada a fortalecer el bienestar animal mediante una administración eficiente, segura y escalable, capaz de adaptarse al crecimiento y necesidades futuras de cualquier refugio.
+## 🐾 Falta de seguimiento en las adopciones
+
+El refugio necesita conocer en todo momento:
+
+- Qué mascotas están disponibles.
+- Cuáles se encuentran en proceso de adopción.
+- Cuáles ya fueron adoptadas.
+- Quién es el adoptante responsable de cada mascota.
+
+Sin un sistema centralizado, este seguimiento se vuelve lento y propenso a errores.
+
+## 👤 Gestión limitada de adoptantes
+
+Los adoptantes deben proporcionar información relevante para garantizar una adopción responsable. Sin embargo, la falta de organización dificulta:
+
+- Consultar expedientes.
+- Ver solicitudes previas.
+- Revisar entrevistas realizadas.
+- Dar seguimiento posterior a la adopción.
+
+## 📅 Control insuficiente de entrevistas y solicitudes
+
+El proceso de adopción requiere diversas etapas de validación. Sin una plataforma adecuada resulta complicado:
+
+- Registrar solicitudes.
+- Programar entrevistas.
+- Aprobar o rechazar candidatos.
+- Mantener un historial de decisiones.
+
+## 🔒 Seguridad y control de acceso
+
+No todos los usuarios deben tener los mismos permisos dentro del sistema.
+
+Se identificó la necesidad de implementar:
+
+- 👨‍💼 Administradores con control total del sistema.
+- 👩‍💻 Empleados con permisos limitados.
+- 🔐 Protección de información sensible.
+- 📋 Control sobre modificaciones y eliminaciones de registros.
+
+---
+
+# 💡 Solución Propuesta: BD_Huellitas
+
+Como respuesta a estas necesidades surge **BD_Huellitas**, una plataforma web diseñada para digitalizar y centralizar la administración completa de un refugio de animales.
+
+El sistema permite:
+
+✅ Gestionar mascotas disponibles para adopción.
+
+✅ Registrar y administrar adoptantes.
+
+✅ Controlar solicitudes y protocolos de adopción.
+
+✅ Programar y administrar entrevistas.
+
+✅ Llevar un historial completo de adopciones.
+
+✅ Gestionar empleados y niveles de acceso.
+
+✅ Mantener toda la información organizada en una base de datos centralizada.
+
+---
+
+# Impacto Esperado
+
+Con la implementación de **BD_Huellitas**, el refugio podrá:
+
+- Reducir errores administrativos.
+- Mejorar la organización de la información.
+- Agilizar los procesos de adopción.
+- Facilitar el seguimiento de cada mascota.
+- Incrementar la transparencia en la gestión.
+- Promover una adopción más segura y responsable.
+
+**Huellitas** busca convertirse en una herramienta integral que ayude a conectar a los animales rescatados con familias responsables, garantizando un proceso ordenado, seguro y centrado en el bienestar animal.
 
 # Tecnologías Utilizadas
 
