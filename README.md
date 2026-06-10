@@ -4,6 +4,24 @@
 
 ### Introducción
 
+## 📊 Modelo Entidad Relación (ER)
+
+<p align="center">
+  <img src="./modeloentidadrelacion.png" alt="Modelo ER" width="100%">
+</p>
+
+## 📈 Modelo Entidad Relación Extendido (EER)
+
+<p align="center">
+  <img src="./modeloentidadrelacionextendido.png" alt="Modelo EER" width="100%">
+</p>
+
+## 🔗 Modelo Relacional
+
+<p align="center">
+  <img src="./modelo-relacional.png" alt="Modelo Relacional" width="100%">
+</p>
+
 BD_Huellitas es un sistema web desarrollado con el propósito de apoyar la gestión de un refugio de animales, permitiendo administrar de manera eficiente los procesos relacionados con la adopción de mascotas. El proyecto surge de la necesidad de digitalizar tareas que normalmente se realizan de forma manual, tales como el registro de adoptantes, la administración de mascotas disponibles, el seguimiento de solicitudes de adopción y la gestión de entrevistas previas a la entrega de los animales.
 
 El sistema busca facilitar la interacción entre los usuarios interesados en adoptar y el personal encargado del refugio, proporcionando una plataforma intuitiva, organizada y segura para ambas partes.
