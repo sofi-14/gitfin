@@ -1,32 +1,5 @@
 # Proyecto BD_Huellitas
-<details>
-<summary>🖼️ Ver capturas de pantalla</summary>
 
-<br>
-
-<h3>📊 Modelo Entidad Relación (ER)</h3>
-
-<p align="center">
-  <img src="./modeloentidadrelacion.png" alt="Modelo Entidad Relación" width="100%" loading="lazy">
-</p>
-
-<br>
-
-<h3>🗄️ Modelo Relacional</h3>
-
-<p align="center">
-  <img src="./modelo-relacional.png" alt="Modelo Relacional" width="100%" loading="lazy">
-</p>
-
-<br>
-
-<h3>🔷 Modelo Entidad Relación Extendido (EER)</h3>
-
-<p align="center">
-  <img src="./modeloentidadrelacionextendido.png" alt="Modelo Entidad Relación Extendido" width="100%" loading="lazy">
-</p>
-
-</details>
 ## Sistema Web para la Gestión de Adopciones de Mascotas
 
 ### Introducción
@@ -323,9 +296,30 @@ Una vez definidas las entidades se procedió a construir el Modelo Entidad Relac
 
 ## 📊 Modelo Entidad Relación (ER)
 
+<details>
+
+<summary>📊 Modelo Entidad Relación (ER)</summary>
+
+
+
+<br>
+
+
 <p align="center">
-  <img src="./modeloentidadrelacion.png" alt="Modelo ER" width="100%">
+
+  <img src="./modeloentidadrelacion.png"
+
+       alt="Modelo Entidad Relación"
+
+       width="100%"
+
+       loading="lazy">
+
 </p>
+
+</details>
+
+<details>
 
 ---
 
