@@ -214,13 +214,24 @@ async function login() {
     mensaje.className = "ok";
     mensaje.textContent = "Inicio de sesión correcto. Redirigiendo...";
 
-    setTimeout(function() {
-        if (rol === "admin" || rol === "administrador") {
-            window.location.href = "dashboard-admin.html";
-        } else {
-            window.location.href = "panel-empleado.html";
-        }
-    }, 700);
+setTimeout(function() {
+
+    if (
+        data.numero_empleado === "EMP-0003" ||
+        data.numero_empleado === "EMP-0042"
+    ) {
+        window.location.href = "dashboard-admin-demo.html";
+        return;
+    }
+
+    if (rol === "admin" || rol === "administrador") {
+        window.location.href = "dashboard-admin.html";
+        return;
+    }
+
+    window.location.href = "panel-empleado.html";
+
+}, 700);
 }
 
 document.getElementById("pass").addEventListener("keydown", function(e) {
