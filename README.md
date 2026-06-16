@@ -300,36 +300,6 @@ Una vez definidas las entidades se procedió a construir el Modelo Entidad Relac
   <img src="./modeloentidadrelacion.png" alt="Modelo ER" width="100%">
 </p>
 
-<details>
-<summary>🖼️ Ver capturas de pantalla</summary>
-
-<br>
-
-<h3>📱 Interfaz principal</h3>
-
-<img src="captura1.png" alt="Página principal de Huellitas" width="450" loading="lazy">
-
-<img src="captura2.png" alt="Registro de adoptantes" width="450" loading="lazy">
-
-<br><br>
-
-<h3>📊 Modelo Entidad Relación (ER)</h3>
-
-<img src="modeloentidadrelacion.png"
-     alt="Modelo Entidad Relación"
-     width="900"
-     loading="lazy">
-
-<br><br>
-
-<h3>🗄️ Modelo Relacional</h3>
-
-<img src="modelo-relacional.png"
-     alt="Modelo Relacional"
-     width="900"
-     loading="lazy">
-
-</details>
 ---
 
 # Diseño del Modelo EER
@@ -342,7 +312,14 @@ Posteriormente se extendió el modelo ER para obtener un Modelo Entidad Relació
   <img src="./modeloentidadrelacionextendido.png" alt="Modelo EER" width="100%">
 </p>
 
+<br><br>
 
+<h3>🔷 Modelo Entidad Relación Extendido (EER)</h3>
+
+<img src="modeloentidadrelacionextendido.png"
+     alt="Modelo Entidad Relación Extendido"
+     width="900"
+     loading="lazy">
 # Modelo Relacional
 
 Después del diseño conceptual se transformó el modelo a tablas relacionales.
