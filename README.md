@@ -312,14 +312,7 @@ Posteriormente se extendió el modelo ER para obtener un Modelo Entidad Relació
   <img src="./modeloentidadrelacionextendido.png" alt="Modelo EER" width="100%">
 </p>
 
-<br><br>
 
-<h3>🔷 Modelo Entidad Relación Extendido (EER)</h3>
-
-<img src="modeloentidadrelacionextendido.png"
-     alt="Modelo Entidad Relación Extendido"
-     width="900"
-     loading="lazy">
 # Modelo Relacional
 
 Después del diseño conceptual se transformó el modelo a tablas relacionales.
