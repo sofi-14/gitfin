@@ -292,59 +292,47 @@ Atributos:
 
 # Diseño del Modelo Entidad Relación (ER)
 
-Una vez definidas las entidades se procedió a construir el Modelo Entidad Relación:
-
-## 📊 Modelo Entidad Relación (ER)
-
-<details>
-
-<summary>📊 Modelo Entidad Relación (ER)</summary>
-
-
-
-<br>
-
-
-<p align="center">
-
-  <img src="./modeloentidadrelacion.png"
-
-       alt="Modelo Entidad Relación"
-
-       width="100%"
-
-       loading="lazy">
-
-</p>
-
-</details>
-
-<details>
-
----
+Una vez definidas las entidades se procedió a construir el Modelo Entidad Relación
 
 # Diseño del Modelo EER
 
 Posteriormente se extendió el modelo ER para obtener un Modelo Entidad Relación Extendido (EER).
-
-## 📈 Modelo Entidad Relación Extendido (EER)
-
-<p align="center">
-  <img src="./modeloentidadrelacionextendido.png" alt="Modelo EER" width="100%">
-</p>
 
 
 # Modelo Relacional
 
 Después del diseño conceptual se transformó el modelo a tablas relacionales.
 
-Las principales tablas fueron:
+<details>
+<summary>🖼️ Ver capturas de pantalla</summary>
 
-## 🔗 Modelo Relacional
+<br>
+
+<h3>📊 Modelo Entidad Relación (ER)</h3>
 
 <p align="center">
-  <img src="./modelo-relacional.png" alt="Modelo Relacional" width="100%">
+  <img src="./modeloentidadrelacion.png" alt="Modelo Entidad Relación" width="100%" loading="lazy">
 </p>
+
+<br>
+
+<h3>🗄️ Modelo Relacional</h3>
+
+<p align="center">
+  <img src="./modelo-relacional.png" alt="Modelo Relacional" width="100%" loading="lazy">
+</p>
+
+<br>
+
+<h3>🔷 Modelo Entidad Relación Extendido (EER)</h3>
+
+<p align="center">
+  <img src="./modeloentidadrelacionextendido.png" alt="Modelo Entidad Relación Extendido" width="100%" loading="lazy">
+</p>
+
+</details>
+
+Las tablas principales en el modelo relacional fueron:
 
 * mascotas
 * adoptantes
