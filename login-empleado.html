@@ -212,13 +212,13 @@ async function login() {
             data.numero_empleado === "EMP-0042"
         ) {
             localStorage.setItem("admin_tipo", "chocolate");
-            window.location.href = "dashboard-admin.html";
+            window.location.href = "admin-dashboard.html";
             return;
         }
 
         if (rol === "admin" || rol === "administrador") {
             localStorage.setItem("admin_tipo", "real");
-            window.location.href = "dashboard-admin.html";
+            window.location.href = "admin-dashboard.html";
             return;
         }
 
