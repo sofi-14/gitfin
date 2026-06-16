@@ -1,5 +1,13 @@
 # Proyecto BD_Huellitas
 
+## 📊 Modelo Entidad Relación (ER)
+
+<img src="modeloentidadrelacion.png" width="900" loading="lazy">
+
+## 🗄️ Modelo Relacional
+
+<img src="modelo-relacional.png" width="900" loading="lazy">
+
 ## Sistema Web para la Gestión de Adopciones de Mascotas
 
 ### Introducción
