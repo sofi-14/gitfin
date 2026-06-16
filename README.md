@@ -552,7 +552,7 @@ La interfaz fue diseñada para ser intuitiva y comprensible incluso para usuario
 
 ---
 
-⭐ ¿Por qué elegir Huellitas?
+## ⭐ ¿Por qué elegir Huellitas?
 
 Huellitas no es únicamente una página para mostrar mascotas. Es una plataforma pensada para administrar de forma completa el proceso de adopción.
 
@@ -570,7 +570,9 @@ Dar seguimiento al proceso.
 Además, el sistema prioriza la seguridad e integridad de cada animalito que sale del refugio. La adopción no se maneja como una simple publicación, sino como un proceso responsable con validación, entrevista y seguimiento.
 
 Esto convierte a Huellitas en una solución más completa, ordenada y confiable para refugios que necesitan digitalizar sus procesos.
+
 Prueba de usuario admnistrador:
 
-Usuario: EMP-0042 Contraseña: 1234
-Repositorio general: https://github.com/gabrielhuav/DB-Coursework-2026-2
+Usuario de prueba (administrador): EMP-0003 Contraseña: 12345
+
+Repositorio general: https://github.com/gabrielhuav/DB-Coursework-2026-2 
