@@ -179,15 +179,6 @@ async function login() {
 
     let rol = String(data.rol || "").trim().toLowerCase();
 
-    /*
-        EMP-0042 se conserva como admin de prueba.
-        EMP-0001 y cualquier otro empleado con rol = admin
-        entran al panel administrador real.
-    */
-    if (data.numero_empleado === "EMP-0003") {
-        rol = "admin";
-    }
-
     if (rol !== "admin" && rol !== "administrador" && rol !== "empleado") {
         mensaje.textContent = "Tu usuario no tiene permisos registrados.";
         return;
@@ -214,24 +205,27 @@ async function login() {
     mensaje.className = "ok";
     mensaje.textContent = "Inicio de sesión correcto. Redirigiendo...";
 
-setTimeout(function() {
+    setTimeout(function() {
 
-    if (
-        data.numero_empleado === "EMP-0003" ||
-        data.numero_empleado === "EMP-0042"
-    ) {
-        window.location.href = "dashboard-admin.html";
-        return;
-    }
+        if (
+            data.numero_empleado === "EMP-0003" ||
+            data.numero_empleado === "EMP-0042"
+        ) {
+            localStorage.setItem("admin_tipo", "chocolate");
+            window.location.href = "dashboard-admin.html";
+            return;
+        }
 
-    if (rol === "admin" || rol === "administrador") {
-        window.location.href = "dashboard-admin.html";
-        return;
-    }
+        if (rol === "admin" || rol === "administrador") {
+            localStorage.setItem("admin_tipo", "real");
+            window.location.href = "dashboard-admin.html";
+            return;
+        }
 
-    window.location.href = "panel-empleado.html";
+        localStorage.setItem("admin_tipo", "ninguno");
+        window.location.href = "panel-empleado.html";
 
-}, 700);
+    }, 700);
 }
 
 document.getElementById("pass").addEventListener("keydown", function(e) {
