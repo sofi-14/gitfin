@@ -575,4 +575,8 @@ Prueba de usuario admnistrador:
 
 Usuario de prueba (administrador): EMP-0003 Contraseña: 12345
 
+Página estatica (sin conexion a base de datos) 
+Usuario de prueba: EMP-0042 Contraseña: 1234 
+EMP-0002 Contraseña: 12345
+
 Repositorio general: https://github.com/gabrielhuav/DB-Coursework-2026-2 
